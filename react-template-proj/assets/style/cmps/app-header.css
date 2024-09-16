@@ -9,3 +9,8 @@
     color: var(--clr2bg);
   }
 }
+
+.app-nav a{
+  padding: 10px;
+}
+
