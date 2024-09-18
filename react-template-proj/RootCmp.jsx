@@ -29,3 +29,7 @@ export function App() {
         </section>
     )
 }
+
+
+//currencyCode <input select>
+// different ways to send object params to methods
