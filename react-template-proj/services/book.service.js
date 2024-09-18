@@ -14,7 +14,6 @@ export const bookService = {
 }
 
 function query(filterBy = {}) {
-    console.log('im in book Service page')
     return storageService.query(BOOK_KEY)
         .then(books => {
             if (filterBy.txt) {
@@ -24,7 +23,6 @@ function query(filterBy = {}) {
             if (filterBy.minSpeed) {
                 books = books.filter(book => book.speed >= filterBy.minSpeed)
             }
-            console.log(books);
             return books
         })
 
@@ -62,12 +60,12 @@ function _createBooks() {
     let books = loadFromStorage(BOOK_KEY)
     if (!books || !books.lengt)
         books = [
-            _createBook('Nature', 'ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia', 'src-png', 150, 'NIS'),
-            _createBook('Rat Away', 'ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit', 'src-png', 72, 'NIS'),
+            _createBook('Nature', 'ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia', './book-imgs/15.jpg', 150, 'NIS'),
+            _createBook('Rat Away', 'ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit', './book-imgs/16.jpg', 72, 'NIS'),
             _createBook('Pride and Prejudice', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt', 'src-png', 130, 'NIS'),
-            _createBook('Jane Eyre', 'ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia', 'src-png', 96, 'NIS', true),
-            _createBook('Treasure Island', 'ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia', 'src-png', 90, 'NIS'),
-            _createBook('Don Quixote', 'ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia', 'src-png', 60, 'NIS'),
+            _createBook('Jane Eyre', 'ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia', './BooksImages/15.jpg', 96, 'NIS', true),
+            _createBook('Treasure Island', 'ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia', './BooksImages/15.jpg', 90, 'NIS'),
+            _createBook('Don Quixote', 'ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia', './BooksImages/15.jpg', 60, 'NIS'),
         ]
     saveToStorage(BOOK_KEY, books)
     return books
